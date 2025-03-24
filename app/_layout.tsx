@@ -1,33 +1,36 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
+import '../global.css';
 
-import { useColorScheme } from '@/components/useColorScheme';
 
 export {
-  // Catch any errors thrown by the Layout component.
   ErrorBoundary,
 } from 'expo-router';
 
-export const unstable_settings = {
-  // Ensure that reloading on `/modal` keeps a back button present.
-  initialRouteName: '(tabs)',
-};
-
-// Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-    ...FontAwesome.font,
+    "Montserrat-Black": require("../assets/fonts/Montserrat-Black.ttf"),
+    "Montserrat-Bold": require("../assets/fonts/Montserrat-Bold.ttf"),
+    "Montserrat-ExtraBold": require("../assets/fonts/Montserrat-ExtraBold.ttf"),
+    "Montserrat-Light": require("../assets/fonts/Montserrat-Light.ttf"),
+    "Montserrat-Medium": require("../assets/fonts/Montserrat-Medium.ttf"),
+    "Montserrat-Regular": require("../assets/fonts/Montserrat-Regular.ttf"),
+    "Montserrat-SemiBold": require("../assets/fonts/Montserrat-SemiBold.ttf"),
+    "Roboto-Black": require("../assets/fonts/Roboto-Black.ttf"),
+    "Roboto-Bold": require("../assets/fonts/Roboto-Bold.ttf"),
+    "Roboto-ExtraBold": require("../assets/fonts/Roboto-ExtraBold.ttf"),
+    "Roboto-Light": require("../assets/fonts/Roboto-Light.ttf"),
+    "Roboto-Medium": require("../assets/fonts/Roboto-Medium.ttf"),
+    "Roboto-Regular": require("../assets/fonts/Roboto-Regular.ttf"),
+    "Roboto-SemiBold": require("../assets/fonts/Roboto-SemiBold.ttf"),
   });
 
-  // Expo Router uses Error Boundaries to catch errors in the navigation tree.
+
   useEffect(() => {
     if (error) throw error;
   }, [error]);
@@ -46,14 +49,11 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
-  const colorScheme = useColorScheme();
-
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
+        <Stack.Screen name="index" options={ {headerShown:false }}/>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
+        <Stack.Screen name="(auth)/login" options={{ headerShown: false }} />
       </Stack>
-    </ThemeProvider>
   );
 }
