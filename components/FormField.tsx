@@ -4,9 +4,9 @@ import { useState } from "react";
 function FormField( { title, value, placeholder, handleChangeText, ...props }: any) {
     const [ showPassword, setShowPassword ] = useState(false);
     return(
-        <View className="m-2">
-            <Text className="font-rlight text-[10px]">{title}</Text>
-            <View className="w-4/5 h-[50px] px-2.5 rounded-2xl border flex justify-center border-alphaBlack bg-white">
+        <View className="my-2 w-4/5">
+            <Text className="font-rlight text-[10px] pl-2.5">{title}</Text>
+            <View className="w-full h-[50px] px-2.5 rounded-2xl border flex justify-center border-alphaBlack bg-white">
                 <TextInput
                     className="font-rmedium text-sm text-alphaBlack"
                     value={value}
@@ -14,7 +14,7 @@ function FormField( { title, value, placeholder, handleChangeText, ...props }: a
                     // placeholderTextColor="#7B7B8B"
                     onChangeText={handleChangeText}
                     autoCapitalize = {"none"}
-                    secureTextEntry={title === "Password" && !showPassword}
+                    secureTextEntry={title === "Password" || title === "Confirm Password" && !showPassword}
                     {...props}
                 />
 

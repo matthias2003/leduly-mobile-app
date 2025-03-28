@@ -35,7 +35,7 @@ export default function RootLayout() {
 
                 <Button
                     title="Get started"
-                    onPress={() => router.push('/login')}
+                    onPress={() => router.navigate('/login')}
                 />
             </View>
         </SafeAreaView>
