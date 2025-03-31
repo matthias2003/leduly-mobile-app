@@ -13,7 +13,7 @@ function SignIn() {
     })
 
     const handleSignIn = async (): Promise<void> => {
-
+        router.navigate("/home");
     }
 
     return(

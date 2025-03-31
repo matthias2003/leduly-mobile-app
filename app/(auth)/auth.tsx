@@ -1,4 +1,4 @@
-import {Pressable, Text, View} from "react-native";
+import { Pressable, Text, View, TextInput} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {router} from "expo-router";
 import FormField from "@/components/FormField";
@@ -6,7 +6,7 @@ import Button from "@/components/Button";
 
 function Auth() {
     const handleAuth = async (): Promise<void> => {
-
+        router.navigate("/home");
     }
 
     return(
