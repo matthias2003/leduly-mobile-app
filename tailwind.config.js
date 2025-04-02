@@ -8,7 +8,8 @@ module.exports = {
         primary: "#FBFBFB",
         secondary: "#246EE9",
         dark: "#2D2D2D",
-        alphaBlack: "#000000CC"
+        alphaBlack: "#000000CC",
+        gray: "#D9D9D9"
       },
       fontFamily: {
         mblack: ["Montserrat-Black", "sans-serif"],
