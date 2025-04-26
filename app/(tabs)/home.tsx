@@ -1,8 +1,6 @@
-import {FlatList, ScrollView, Text, View} from "react-native";
+import { FlatList, Text, View } from "react-native";
 import ItemTile from "@/components/ItemTile";
 import ItemTilePopular from "@/components/ItemTilePopular";
-
-
 
 function Home() {
     const data = [
@@ -21,31 +19,34 @@ function Home() {
     ];
 
     return(
-        <FlatList
-            data={data}
-            renderItem={( {item }) =>  <ItemTile style={"my-3"}/>}
-            ListHeaderComponent={() => (
-                <View>
-                    <View className="flex flex-row justify-between">
-                        <View><Text className="font-rmedium text-[15px]">Your location</Text></View>
-                        <View><Text className="font-rmedium text-[15px]">Opole</Text></View>
-                    </View>
+        <View className="bg-primary">
+            <FlatList
+                data={data}
+                renderItem={( {item }) =>  <ItemTile style={"my-5"}/>}
+                ListHeaderComponent={() => (
                     <View>
-                            <Text className="font-rextrabold text-[20px]">Popular in your area</Text>
-                            <FlatList
-                                data={data}
-                                renderItem={({item}) => <ItemTilePopular title={item.title}/>}
-                                keyExtractor={item => item.id}
-                                horizontal={true}
-                            />
-                     </View>
+                        <View className="flex flex-row justify-between">
+                            <View><Text className="font-rmedium text-[15px] m-3">Your location</Text></View>
+                            <View><Text className="font-rmedium text-[15px] m-3">Opole</Text></View>
+                        </View>
+                        <View>
+                                <Text className="font-rextrabold text-[20px] m-3">Popular in your area</Text>
+                                <FlatList
+                                    data={data}
+                                    className="px-3"
+                                    renderItem={({item}) => <ItemTilePopular title={item.title}/>}
+                                    keyExtractor={item => item.id}
+                                    horizontal={true}
+                                />
+                         </View>
 
-                    <View>
-                        <Text className="font-rextrabold text-[20px]">Explore recommended specialist </Text>
+                        <View>
+                            <Text className="font-rextrabold text-[20px] mx-3 mt-10">Explore recommended specialist </Text>
+                        </View>
                     </View>
-                </View>
-            )}>
-        </FlatList>
+                )}>
+            </FlatList>
+        </View>
     )
 }
 

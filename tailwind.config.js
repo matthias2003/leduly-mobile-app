@@ -9,7 +9,8 @@ module.exports = {
         secondary: "#246EE9",
         dark: "#2D2D2D",
         alphaBlack: "#000000CC",
-        gray: "#D9D9D9"
+        gray: "#D9D9D9",
+        graySecondary: "#F2F3F5"
       },
       fontFamily: {
         mblack: ["Montserrat-Black", "sans-serif"],

@@ -29,7 +29,7 @@ export default function TabsLayout() {
     return (
     <>
         <SafeAreaView className="bg-blue-600 flex items-center h-[110px]">
-                <Text className="h-[50px] font-mextrabold text-white text-[30px]">Leduly</Text>  /* TODO: CHANGE TO DYNAMIC HEIGHT */
+                <Text className="h-[50px] font-mextrabold text-white text-[30px]">Leduly</Text>
         </SafeAreaView>
         <Tabs
             screenOptions={{
@@ -37,7 +37,6 @@ export default function TabsLayout() {
                 tabBarInactiveTintColor: "#000000",
             }}>
 
-        {/*<Tabs screenOptions={{ headerShown: false }}>*/}
             <Tabs.Screen name="search"
                 options={{ title: "Search" ,
                     headerShown: false,
