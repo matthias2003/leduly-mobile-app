@@ -1,6 +1,7 @@
-import { FlatList, Text, View } from "react-native";
+import { FlatList, Text, View, Image } from "react-native";
 import ItemTile from "@/components/ItemTile";
 import ItemTilePopular from "@/components/ItemTilePopular";
+import icons from "@/constants/IconsHome";
 
 function Home() {
     const data = [
@@ -26,8 +27,11 @@ function Home() {
                 ListHeaderComponent={() => (
                     <View>
                         <View className="flex flex-row justify-between">
-                            <View><Text className="font-rmedium text-[15px] m-3">Your location</Text></View>
-                            <View><Text className="font-rmedium text-[15px] m-3">Opole</Text></View>
+                            <View className="m-3"><Text className="font-rmedium text-[15px]">Your location</Text></View>
+                            <View className="flex flex-row items-center m-3">
+                                <Text className="font-rmedium text-[15px]">Opole</Text>
+                                <Image className="w-[20px] h-[20px] rotate-90" source={icons.arrow} alt="arrow" />
+                            </View>
                         </View>
                         <View>
                                 <Text className="font-rextrabold text-[20px] m-3">Popular in your area</Text>
@@ -37,11 +41,12 @@ function Home() {
                                     renderItem={({item}) => <ItemTilePopular title={item.title}/>}
                                     keyExtractor={item => item.id}
                                     horizontal={true}
+                                    showsHorizontalScrollIndicator={false}
                                 />
                          </View>
 
-                        <View>
-                            <Text className="font-rextrabold text-[20px] mx-3 mt-10">Explore recommended specialist </Text>
+                        <View className="m-3 mt-10">
+                            <Text className="font-rextrabold text-[20px]">Explore recommended specialist </Text>
                         </View>
                     </View>
                 )}>

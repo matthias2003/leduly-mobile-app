@@ -6,7 +6,7 @@ function SearchInput( { title, onPress, additionalStyle, image } : any ) {
     const [data, setData] = useState("");
 
     return(
-        <View className="flex flex-row items-center h-[60px] rounded-2x bg-graySecondary">
+        <View className={`flex flex-row items-center h-[60px] px-5 rounded-2xl bg-graySecondary ${additionalStyle}`}>
             <TextInput
                 className="flex-1 font-mmedium text-[15px]"
                 value={data}
