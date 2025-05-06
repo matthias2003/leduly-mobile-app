@@ -1,6 +1,7 @@
-import {FlatList, Text, View} from "react-native";
+import {FlatList, Image, Text, View} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import ItemTilePopular from "@/components/ItemTilePopular";
+import icons from "@/constants/IconsHome";
 
 const data = [
     {
@@ -34,11 +35,16 @@ function Favourites() {
     return(
         <FlatList
             data={data}
-            className="px-3"
-            contentContainerStyle={{ alignItems: "center"}}
+            className="w-full"
+            columnWrapperStyle={{ justifyContent: 'space-evenly' }}
             numColumns={2}
-            renderItem={({item}) => <ItemTilePopular title={item.title} style="my-5" />}
+            renderItem={({item}) => <ItemTilePopular title={item.title} style="mb-5 h-[170px] w-[170px]" />}
             keyExtractor={item => item.id}
+            ListHeaderComponent={() => (
+                <View className="mx-3 my-5">
+                    <Text className="font-mextrabold text-[20px]">Favourites specialist</Text>
+                </View>
+            )}
         />
     )
 }

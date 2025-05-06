@@ -27,18 +27,20 @@ function Home() {
                 ListHeaderComponent={() => (
                     <View>
                         <View className="flex flex-row justify-between">
-                            <View className="m-3"><Text className="font-rmedium text-[15px]">Your location</Text></View>
+                            <View className="m-3">
+                                <Text className="font-rmedium text-[15px]">Your location</Text>
+                            </View>
                             <View className="flex flex-row items-center m-3">
                                 <Text className="font-rmedium text-[15px]">Opole</Text>
                                 <Image className="w-[20px] h-[20px] rotate-90" source={icons.arrow} alt="arrow" />
                             </View>
                         </View>
                         <View>
-                                <Text className="font-rextrabold text-[20px] m-3">Popular in your area</Text>
+                                <Text className="font-mextrabold text-[20px] m-3">Popular in your area</Text>
                                 <FlatList
                                     data={data}
                                     className="px-3"
-                                    renderItem={({item}) => <ItemTilePopular title={item.title}/>}
+                                    renderItem={({item}) => <ItemTilePopular title={item.title} style="mx-2 w-[150px] h-[150px]"/>}
                                     keyExtractor={item => item.id}
                                     horizontal={true}
                                     showsHorizontalScrollIndicator={false}
@@ -46,7 +48,7 @@ function Home() {
                          </View>
 
                         <View className="m-3 mt-10">
-                            <Text className="font-rextrabold text-[20px]">Explore recommended specialist </Text>
+                            <Text className="font-mextrabold text-[20px]">Explore recommended specialist </Text>
                         </View>
                     </View>
                 )}>

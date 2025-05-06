@@ -5,7 +5,7 @@ function Profile() {
     return(
         <View>
             <View className="mx-3 my-5">
-                <Text className="font-rextrabold text-[20px]">My profile</Text>
+                <Text className="font-mextrabold text-[20px]">My profile</Text>
             </View>
 
             <View className="w-11/12 h-[190px] bg-secondary mx-auto rounded-[15px] flex-row items-center">
